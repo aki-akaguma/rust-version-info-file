@@ -22,6 +22,6 @@ In Cargo.toml
 [package.metadata.deb]
 assets = [
     ["target/rust-version-info.txt", "usr/share/doc/your_package/", "644"],
-    ["README.md", "usr/share/doc/hmon-rs/", "644"],
+    ["README.md", "usr/share/doc/your_package/", "644"],
 ]
 ```

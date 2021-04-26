@@ -7,12 +7,14 @@ pub fn rust_version_info_file<T: AsRef<Path>>(dst: T) {
     let old_s = read_file(dst_path);
     let curr_s = format!("{}\n{}\n", rustc_version_info(), tree_version_info(),);
     if old_s != curr_s {
-        let mut fo = OpenOptions::new()
+        let mut fo = match OpenOptions::new()
             .create(true)
             .write(true)
             .truncate(true)
-            .open(dst_path)
-            .unwrap();
+            .open(dst_path) {
+            Ok(fo) => fo,
+            Err(_) => return,
+        };
         let _ = fo.write_fmt(format_args!("{}", curr_s));
         let _ = fo.flush();
     }
