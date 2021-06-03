@@ -1,0 +1,61 @@
+[package]
+name = "aki-gsub"
+version = "0.1.29"
+authors = ["aki <aki.akaguma@hotmail.com>"]
+description = """
+substitude text command, replace via regex.
+"""
+keywords = ["text", "filter"]
+categories = ["command-line-utilities", "text-processing"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+build = "build.rs"
+edition = "2018"
+repository = "https://github.com/aki-akaguma/aki-gsub"
+
+[lib]
+name = "libaki_gsub"
+path = "src/lib.rs"
+crate-type = ["lib"]
+
+[[bin]]
+name = "aki-gsub"
+path = "src/main.rs"
+
+[features]
+default = []
+debian_build = []
+
+[dependencies]
+anyhow = "1.0"
+atty = "0.2"
+flood-tide = { version="0.2", default-features=true, features=["stop_at_mm"] }
+regex = "1.4"
+runnel = "0.3"
+
+[dev-dependencies]
+
+[build-dependencies]
+rust-version-info-file = "0.1"
+rustc_version = "0.3"
+
+[workspace]
+members = [
+    "xtask",
+]
+
+[package.metadata.deb]
+features = ["debian_build"]
+section = "AAA-text"
+priority = "optional"
+maintainer = "aki <aki.akaguma@hotmail.com>"
+extended-description = """\
+This program is substitude text command, replace via regex.
+"""
+depends = "$auto"
+separate-debug-symbols = true
+assets = [
+    ["target/release/aki-gsub", "usr/bin/aki-gsub", "755"],
+    ["target/rust-version-info.txt", "usr/share/doc/aki-gsub/", "644"],
+    ["README.md", "usr/share/doc/aki-gsub/", "644"],
+]

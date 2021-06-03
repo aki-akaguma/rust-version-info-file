@@ -1,27 +1,38 @@
 # rust-version-info-file
 
-*rust-version-info-file* is generating one file includes rustc version and cargo tree.
+output rust version info file
 
-## Easy to use
+This crate is the presents, the file output of rustc --version and cargo tree command.
 
-Write following into The build.rs:
+## Examples
+
+Please write the following code in the build.rs:
 
 ```rust
 use rust_version_info_file::rust_version_info_file;
 
 fn main() {
-    rust_version_info_file("target/rust-version-info.txt");
+    rust_version_info_file("target/rust-version-info.txt", "Cargo.toml");
 }
+```
+
+And you get the file as result it.
+
+```
+cat target/rust-version-info-file.txt
 ```
 
 ## On debian package
 
 In Cargo.toml
 
-```text
+```
 [package.metadata.deb]
 assets = [
     ["target/rust-version-info.txt", "usr/share/doc/your_package/", "644"],
     ["README.md", "usr/share/doc/your_package/", "644"],
 ]
 ```
+
+
+License: MIT OR Apache-2.0

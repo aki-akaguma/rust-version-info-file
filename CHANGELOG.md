@@ -2,6 +2,12 @@ rust-version-info-file TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.1.2 (2021-06-03)
+=====
+
+* some change output format
+* add parameter: cargo_toml_file into rust_version_info_file()
+
 0.1.1 (2021-04-26)
 =====
 
