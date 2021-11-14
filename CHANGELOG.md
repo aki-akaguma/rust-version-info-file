@@ -2,6 +2,12 @@ rust-version-info-file TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.1.3 (2021-11-14)
+=====
+
+* add more documents.
+* fix test: test match with regex.
+
 0.1.2 (2021-06-03)
 =====
 

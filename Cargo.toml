@@ -1,6 +1,6 @@
 [package]
 name = "rust-version-info-file"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 description = """
 generating one file includes rustc version and cargo tree
@@ -10,3 +10,6 @@ readme = "README.md"
 edition = "2018"
 
 [dependencies]
+
+[dev-dependencies]
+regex = "1.5"
