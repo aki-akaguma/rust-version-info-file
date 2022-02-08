@@ -1,3 +1,4 @@
+#![allow(clippy::needless_doctest_main)]
 /*!
 output rust version info into a file
 
