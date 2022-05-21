@@ -2,6 +2,11 @@ rust-version-info-file TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+0.1.5 (2022-05-21)
+=====
+
+* bug fix: test_0::test_aki_gsub
+
 0.1.4 (2022-02-08)
 =====
 

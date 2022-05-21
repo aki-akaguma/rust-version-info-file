@@ -39,24 +39,24 @@ rust-version-info-file v\d+\.\d+\.\d+
 aki-gsub v0\.1\.29
 ├── anyhow v1\.0\.\d+
 ├── atty v0\.2\.\d+
-│   └── libc v0\.2\.\d+
+│   └── libc v0\.\d+\.\d+
 ├── flood-tide v0\.2\.\d+
 ├── regex v1\.5\.\d+
-│   ├── aho-corasick v0\.7\.\d+
-│   │   └── memchr v2\.4\.\d+
-│   ├── memchr v2\.4\.\d+
-│   └── regex-syntax v0\.6\.\d+
+│   ├── aho-corasick v0\.\d+\.\d+
+│   │   └── memchr v2\.\d+\.\d+
+│   ├── memchr v2\.\d+\.\d+
+│   └── regex-syntax v0\.\d+\.\d+
 └── runnel v0\.3\.\d+
     \[build-dependencies\]
     └── rustc_version v0\.4\.\d+
-        └── semver v1\.0\.\d+
+        └── semver v1\.\d+\.\d+
 \[build-dependencies\]
 ├── rust-version-info-file v0\.1\.\d+
 └── rustc_version v0\.3\.\d+
-    └── semver v0\.11\.\d+
-        └── semver-parser v0\.10\.\d+
-            └── pest v2\.1\.\d+
-                └── ucd-trie v0\.1\.\d+
+    └── semver v0\.\d+\.\d+
+        └── semver-parser v0\.\d+\.\d+
+            └── pest v2\.\d+\.\d+
+                └── ucd-trie v0\.\d+\.\d+
 "#
         }
     }
