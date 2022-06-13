@@ -45,28 +45,32 @@ $ cat target/rust-version-info-aki-gsub.txt
 ```
 
 ```text
-rustc 1.56.1 (59eed8a2a 2021-11-01)
-aki-gsub v0.1.29
-├── anyhow v1.0.45
+rustc 1.61.0 (fe5b13d68 2022-05-18)
+aki-gsub v0.1.34
+├── anyhow v1.0.57
 ├── atty v0.2.14
-│   └── libc v0.2.107
-├── flood-tide v0.2.3
-├── regex v1.5.4
+│   └── libc v0.2.126
+├── flood-tide v0.2.4
+├── memx-cdy v0.1.7
+│   ├── libc v0.2.126
+│   └── memx v0.1.20
+│       [build-dependencies]
+│       └── rustc_version v0.4.0
+│           └── semver v1.0.10
+├── regex v1.5.6
 │   ├── aho-corasick v0.7.18
-│   │   └── memchr v2.4.1
-│   ├── memchr v2.4.1
-│   └── regex-syntax v0.6.25
-└── runnel v0.3.8
+│   │   └── memchr v2.5.0
+│   ├── memchr v2.5.0
+│   └── regex-syntax v0.6.26
+└── runnel v0.3.10
     [build-dependencies]
-    └── rustc_version v0.4.0
-        └── semver v1.0.4
+    └── rustc_version v0.4.0 (*)
 [build-dependencies]
-├── rust-version-info-file v0.1.2
-└── rustc_version v0.3.3
-    └── semver v0.11.0
-        └── semver-parser v0.10.2
-            └── pest v2.1.3
-                └── ucd-trie v0.1.3
+├── rust-version-info-file v0.1.5
+└── rustc_version v0.4.0 (*)
+[dev-dependencies]
+├── exec-target v0.2.6
+└── indoc v1.0.6 (proc-macro)
 ```
 */
 use std::io::{Read, Write};

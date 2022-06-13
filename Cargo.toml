@@ -7,7 +7,7 @@ generating one file includes rustc version and cargo tree
 """
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 

@@ -2,6 +2,7 @@ rust-version-info-file TBD
 ===
 Unreleased changes. Release notes have not yet been written.
 
+* changes to edition 2021
 * updates: fixture/aki-gsub
 
 0.1.5 (2022-05-21)
