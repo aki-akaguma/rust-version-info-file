@@ -6,7 +6,7 @@ This crate is the presents, the file output of rustc --version and cargo tree co
 
 ## Features
 
-- minimum support rustc 1.44.1 (c7087fe00 2020-06-17)
+- minimum support rustc 1.56.1 (59eed8a2a 2021-11-01)
 
 ## Examples
 

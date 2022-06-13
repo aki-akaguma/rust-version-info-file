@@ -36,27 +36,31 @@ rust-version-info-file v\d+\.\d+\.\d+
     macro_rules! rvi_out_aki_gsub {
         () => {
             r#"rustc \d+\.\d+\.\d+(-nightly|-beta\.[^ ]+)? \([0-9a-z]{9} \d{4}-\d{2}-\d{2}\)
-aki-gsub v0\.1\.29
-├── anyhow v1\.0\.\d+
-├── atty v0\.2\.\d+
+aki-gsub v0\.1\.34
+├── anyhow v1\.\d+\.\d+
+├── atty v0\.\d+\.\d+
 │   └── libc v0\.\d+\.\d+
-├── flood-tide v0\.2\.\d+
-├── regex v1\.5\.\d+
+├── flood-tide v0\.\d+\.\d+
+├── memx-cdy v0\.\d+\.\d+
+│   ├── libc v0\.\d+\.\d+
+│   └── memx v0\.\d+\.\d+
+│       \[build-dependencies\]
+│       └── rustc_version v0\.\d+\.\d+
+│           └── semver v1\.\d+\.\d+
+├── regex v1\.\d+\.\d+
 │   ├── aho-corasick v0\.\d+\.\d+
 │   │   └── memchr v2\.\d+\.\d+
 │   ├── memchr v2\.\d+\.\d+
 │   └── regex-syntax v0\.\d+\.\d+
-└── runnel v0\.3\.\d+
+└── runnel v0\.\d+\.\d+
     \[build-dependencies\]
-    └── rustc_version v0\.4\.\d+
-        └── semver v1\.\d+\.\d+
+    └── rustc_version v0\.\d+\.\d+ \(\*\)
 \[build-dependencies\]
-├── rust-version-info-file v0\.1\.\d+
-└── rustc_version v0\.3\.\d+
-    └── semver v0\.\d+\.\d+
-        └── semver-parser v0\.\d+\.\d+
-            └── pest v2\.\d+\.\d+
-                └── ucd-trie v0\.\d+\.\d+
+├── rust-version-info-file v0\.\d+\.\d+
+└── rustc_version v0\.\d+\.\d+ \(\*\)
+\[dev-dependencies\]
+├── exec-target v0\.\d+\.\d+
+└── indoc v1\.\d+\.\d+ \(proc-macro\)
 "#
         }
     }
