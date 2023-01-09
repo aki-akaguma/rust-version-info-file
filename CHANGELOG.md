@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 * reformat `CHANGELOG.md`
 
+### Fixed
+* bug: test_0::test_aki_gsub is failed
+
 
 ## [0.1.6] (2022-06-12)
 ### Changed

@@ -44,6 +44,7 @@ aki-gsub v0\.1\.34
 ├── memx-cdy v0\.\d+\.\d+
 │   ├── libc v0\.\d+\.\d+
 │   └── memx v0\.\d+\.\d+
+│       └── cpufeatures v0\.\d+\.\d+
 │       \[build-dependencies\]
 │       └── rustc_version v0\.\d+\.\d+
 │           └── semver v1\.\d+\.\d+
