@@ -91,7 +91,7 @@ pub fn rust_version_info_file<T: AsRef<Path>>(dst: T, cargo_toml_file: &str) {
             Ok(fo) => fo,
             Err(_) => return,
         };
-        let _ = fo.write_fmt(format_args!("{}", curr_s));
+        let _ = fo.write_fmt(format_args!("{curr_s}"));
         let _ = fo.flush();
     }
 }
