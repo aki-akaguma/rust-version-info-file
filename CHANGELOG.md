@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 * reformat `CHANGELOG.md`
+* update crates: regex(1.7)
 
 ### Fixed
 * bug: test_0::test_aki_gsub is failed
