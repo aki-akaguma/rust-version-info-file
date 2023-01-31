@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 * license files
 * clippy: `bool_assert_comparison`
+* bug: test result FAILED on windows
 
 
 ## [0.1.7] (2023-01-10)

@@ -41,7 +41,7 @@ rust-version-info-file v\d+\.\d+\.\d+
 aki-gsub v0\.1\.34
 ├── anyhow v1\.\d+\.\d+
 ├── atty v0\.\d+\.\d+
-│   └── libc v0\.\d+\.\d+
+│   └── (libc|winapi) v\d+\.\d+\.\d+
 ├── flood-tide v0\.\d+\.\d+
 ├── memx-cdy v0\.\d+\.\d+
 │   ├── libc v0\.\d+\.\d+
@@ -85,10 +85,12 @@ aki-gsub v0\.1\.34
         //
         let out_s = read_file(out_path);
         let re = Regex::new(rvi_out_aki_gsub!()).unwrap();
+        /*
         #[cfg(windows)]
         if !re.is_match(&out_s) {
             assert_eq!(&out_s, "");
         }
+        */
         assert!(re.is_match(&out_s));
     }
 }
