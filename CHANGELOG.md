@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] *
 ### Fixed
 * license files
+* clippy: `bool_assert_comparison`
 
 
 ## [0.1.7] (2023-01-10)

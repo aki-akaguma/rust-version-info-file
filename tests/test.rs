@@ -14,6 +14,8 @@ mod test_0 {
             Ok(mut fi) => {
                 let mut s = String::new();
                 let _ = fi.read_to_string(&mut s);
+                #[cfg(windows)]
+                let s = s.replace("\r\n", "\n");
                 s
             }
             Err(_) => String::new(),
@@ -73,7 +75,7 @@ aki-gsub v0\.1\.34
         //
         let out_s = read_file(out_path);
         let re = Regex::new(rvi_out_myself!()).unwrap();
-        assert_eq!(re.is_match(&out_s), true);
+        assert!(re.is_match(&out_s));
     }
     //
     #[test]
@@ -83,6 +85,6 @@ aki-gsub v0\.1\.34
         //
         let out_s = read_file(out_path);
         let re = Regex::new(rvi_out_aki_gsub!()).unwrap();
-        assert_eq!(re.is_match(&out_s), true);
+        assert!(re.is_match(&out_s));
     }
 }
