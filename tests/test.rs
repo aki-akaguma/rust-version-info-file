@@ -85,6 +85,10 @@ aki-gsub v0\.1\.34
         //
         let out_s = read_file(out_path);
         let re = Regex::new(rvi_out_aki_gsub!()).unwrap();
+        #[cfg(windows)]
+        if !re.is_match(&out_s) {
+            assert_eq!(&out_s, "");
+        }
         assert!(re.is_match(&out_s));
     }
 }
