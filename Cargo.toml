@@ -1,6 +1,6 @@
 [package]
 name = "rust-version-info-file"
-version = "0.1.8"
+version = "0.1.9"
 authors = ["aki <aki.akaguma@hotmail.com>"]
 description = """
 generating one file includes rustc version and cargo tree
