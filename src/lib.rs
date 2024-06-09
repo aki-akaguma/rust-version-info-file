@@ -73,21 +73,26 @@ aki-gsub v0.1.34
 └── indoc v1.0.6 (proc-macro)
 ```
 */
+use std::fs::OpenOptions;
 use std::io::{Read, Write};
 use std::path::Path;
-use std::fs::OpenOptions;
 
 /// output rust version info into a file
 pub fn rust_version_info_file<T: AsRef<Path>>(dst: T, cargo_toml_file: &str) {
     let dst_path: &Path = dst.as_ref();
     let old_s = read_file(dst_path);
-    let curr_s = format!("{}\n{}\n", rustc_version_info(), tree_version_info(cargo_toml_file),);
+    let curr_s = format!(
+        "{}\n{}\n",
+        rustc_version_info(),
+        tree_version_info(cargo_toml_file),
+    );
     if old_s != curr_s {
         let mut fo = match OpenOptions::new()
             .create(true)
             .write(true)
             .truncate(true)
-            .open(dst_path) {
+            .open(dst_path)
+        {
             Ok(fo) => fo,
             Err(_) => return,
         };
@@ -97,11 +102,7 @@ pub fn rust_version_info_file<T: AsRef<Path>>(dst: T, cargo_toml_file: &str) {
 }
 
 fn read_file(path: &Path) -> String {
-    match OpenOptions::new()
-        .create(false)
-        .read(true)
-        .open(path)
-    {
+    match OpenOptions::new().create(false).read(true).open(path) {
         Ok(mut fi) => {
             let mut s = String::new();
             let _ = fi.read_to_string(&mut s);
@@ -150,12 +151,12 @@ fn tree_version_info(cargo_toml_file: &str) -> String {
             let (s1, s2) = string.split_at(pos1);
             match s2.find(')') {
                 Some(pos2) => {
-                    let (_s2, s3) = s2.split_at(pos2+1);
+                    let (_s2, s3) = s2.split_at(pos2 + 1);
                     s1.to_owned() + s3
                 }
                 None => string,
             }
-        },
+        }
         None => string,
     };
     //

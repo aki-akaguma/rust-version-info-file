@@ -1,7 +1,7 @@
 mod test_0 {
-    use regex::Regex;
-    use std::path::Path;
+    use regex::{Regex, RegexBuilder};
     use rust_version_info_file::rust_version_info_file;
+    use std::path::Path;
     //
     fn read_file<T: AsRef<Path>>(src: T) -> String {
         use std::io::Read;
@@ -37,7 +37,7 @@ rust-version-info-file v\d+\.\d+\.\d+
     │   └── regex-syntax v\d+\.\d+\.\d+
     └── regex-syntax v\d+\.\d+\.\d+
 "#
-        }
+        };
     }
     macro_rules! rvi_out_aki_gsub {
         () => {
@@ -50,7 +50,8 @@ aki-gsub v0\.1\.34
 ├── memx-cdy v\d+\.\d+\.\d+
 │   ├── libc v\d+\.\d+\.\d+
 │   └── memx v\d+\.\d+\.\d+
-│       └── cpufeatures v\d+\.\d+\.\d+
+│       └── cpufeatures v\d+\.\d+\.\d+(
+│           └── libc v\d+\.\d+\.\d+)?
 ├── regex v\d+\.\d+\.\d+
 │   ├── aho-corasick v\d+\.\d+\.\d+
 │   │   └── memchr v\d+\.\d+\.\d+
@@ -71,7 +72,7 @@ aki-gsub v0\.1\.34
 ├── exec-target v\d+\.\d+\.\d+
 └── indoc v\d+\.\d+\.\d+ \(proc-macro\)
 "#
-        }
+        };
     }
     //
     #[test]
@@ -90,13 +91,14 @@ aki-gsub v0\.1\.34
         rust_version_info_file(out_path, "fixtures/aki-gsub/Cargo.toml");
         //
         let out_s = read_file(out_path);
-        let re = Regex::new(rvi_out_aki_gsub!()).unwrap();
-        /*
-        #[cfg(windows)]
+        //let re = Regex::new(rvi_out_aki_gsub!()).unwrap();
+        let re = RegexBuilder::new(rvi_out_aki_gsub!())
+            .multi_line(true)
+            .build()
+            .unwrap();
         if !re.is_match(&out_s) {
             assert_eq!(&out_s, "");
         }
-        */
         assert!(re.is_match(&out_s));
     }
 }
