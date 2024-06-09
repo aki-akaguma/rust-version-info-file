@@ -31,6 +31,10 @@ rust-version-info-file v\d+\.\d+\.\d+
     ├── aho-corasick v\d+\.\d+\.\d+
     │   └── memchr v\d+\.\d+\.\d+
     ├── memchr v\d+\.\d+\.\d+
+    ├── regex-automata v\d+\.\d+\.\d+
+    │   ├── aho-corasick v\d+\.\d+\.\d+ \(\*\)
+    │   ├── memchr v\d+\.\d+\.\d+
+    │   └── regex-syntax v\d+\.\d+\.\d+
     └── regex-syntax v\d+\.\d+\.\d+
 "#
         }
@@ -39,31 +43,33 @@ rust-version-info-file v\d+\.\d+\.\d+
         () => {
             r#"rustc \d+\.\d+\.\d+(-nightly|-beta\.[^ ]+)? \([0-9a-z]{9} \d{4}-\d{2}-\d{2}\)
 aki-gsub v0\.1\.34
-├── anyhow v1\.\d+\.\d+
-├── atty v0\.\d+\.\d+
+├── anyhow v\d+\.\d+\.\d+
+├── atty v\d+\.\d+\.\d+
 │   └── (libc|winapi) v\d+\.\d+\.\d+
-├── flood-tide v0\.\d+\.\d+
-├── memx-cdy v0\.\d+\.\d+
-│   ├── libc v0\.\d+\.\d+
-│   └── memx v0\.\d+\.\d+
-│       └── cpufeatures v0\.\d+\.\d+
-│       \[build-dependencies\]
-│       └── rustc_version v0\.\d+\.\d+
-│           └── semver v1\.\d+\.\d+
-├── regex v1\.\d+\.\d+
-│   ├── aho-corasick v0\.\d+\.\d+
-│   │   └── memchr v2\.\d+\.\d+
-│   ├── memchr v2\.\d+\.\d+
-│   └── regex-syntax v0\.\d+\.\d+
-└── runnel v0\.\d+\.\d+
+├── flood-tide v\d+\.\d+\.\d+
+├── memx-cdy v\d+\.\d+\.\d+
+│   ├── libc v\d+\.\d+\.\d+
+│   └── memx v\d+\.\d+\.\d+
+│       └── cpufeatures v\d+\.\d+\.\d+
+├── regex v\d+\.\d+\.\d+
+│   ├── aho-corasick v\d+\.\d+\.\d+
+│   │   └── memchr v\d+\.\d+\.\d+
+│   ├── memchr v\d+\.\d+\.\d+
+│   ├── regex-automata v\d+\.\d+\.\d+
+│   │   ├── aho-corasick v\d+\.\d+\.\d+ \(\*\)
+│   │   ├── memchr v\d+\.\d+\.\d+
+│   │   └── regex-syntax v\d+\.\d+\.\d+
+│   └── regex-syntax v\d+\.\d+\.\d+
+└── runnel v\d+\.\d+\.\d+
     \[build-dependencies\]
-    └── rustc_version v0\.\d+\.\d+ \(\*\)
+    └── rustc_version v\d+\.\d+\.\d+
+        └── semver v\d+\.\d+\.\d+
 \[build-dependencies\]
-├── rust-version-info-file v0\.\d+\.\d+
-└── rustc_version v0\.\d+\.\d+ \(\*\)
+├── rust-version-info-file v\d+\.\d+\.\d+
+└── rustc_version v\d+\.\d+\.\d+ \(\*\)
 \[dev-dependencies\]
-├── exec-target v0\.\d+\.\d+
-└── indoc v1\.\d+\.\d+ \(proc-macro\)
+├── exec-target v\d+\.\d+\.\d+
+└── indoc v\d+\.\d+\.\d+ \(proc-macro\)
 "#
         }
     }
