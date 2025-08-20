@@ -50,8 +50,7 @@ aki-gsub v0\.1\.34
 ├── memx-cdy v\d+\.\d+\.\d+
 │   ├── libc v\d+\.\d+\.\d+
 │   └── memx v\d+\.\d+\.\d+
-│       └── cpufeatures v\d+\.\d+\.\d+(
-│           └── libc v\d+\.\d+\.\d+)?
+│       └── cpufeatures v\d+\.\d+\.\d+
 ├── regex v\d+\.\d+\.\d+
 │   ├── aho-corasick v\d+\.\d+\.\d+
 │   │   └── memchr v\d+\.\d+\.\d+
@@ -62,12 +61,10 @@ aki-gsub v0\.1\.34
 │   │   └── regex-syntax v\d+\.\d+\.\d+
 │   └── regex-syntax v\d+\.\d+\.\d+
 └── runnel v\d+\.\d+\.\d+
-    \[build-dependencies\]
-    └── rustc_version v\d+\.\d+\.\d+
-        └── semver v\d+\.\d+\.\d+
 \[build-dependencies\]
 ├── rust-version-info-file v\d+\.\d+\.\d+
-└── rustc_version v\d+\.\d+\.\d+ \(\*\)
+└── rustc_version v\d+\.\d+\.\d+
+    └── semver v\d+\.\d+\.\d+
 \[dev-dependencies\]
 ├── exec-target v\d+\.\d+\.\d+
 └── indoc v\d+\.\d+\.\d+ \(proc-macro\)

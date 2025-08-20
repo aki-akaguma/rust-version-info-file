@@ -8,7 +8,7 @@ generating one file includes rustc version and cargo tree
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 edition = "2021"
-rust-version = "1.58.0"
+rust-version = "1.65.0"
 repository = "https://github.com/aki-akaguma/rust-version-info-file"
 
 [dependencies]

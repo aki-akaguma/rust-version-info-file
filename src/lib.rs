@@ -6,7 +6,7 @@ This crate is the presents, the file output of rustc --version and cargo tree co
 
 # Features
 
-- minimum support rustc 1.58.1 (db9d1b20b 2022-01-20)
+- minimum support rustc 1.65.0 (897e37553 2022-11-02)
 
 # Examples
 
@@ -45,32 +45,33 @@ $ cat target/rust-version-info-aki-gsub.txt
 ```
 
 ```text
-rustc 1.61.0 (fe5b13d68 2022-05-18)
+rustc 1.89.0 (29483883e 2025-08-04)
 aki-gsub v0.1.34
-├── anyhow v1.0.57
+├── anyhow v1.0.99
 ├── atty v0.2.14
-│   └── libc v0.2.126
-├── flood-tide v0.2.4
-├── memx-cdy v0.1.7
-│   ├── libc v0.2.126
-│   └── memx v0.1.20
-│       [build-dependencies]
-│       └── rustc_version v0.4.0
-│           └── semver v1.0.10
-├── regex v1.5.6
-│   ├── aho-corasick v0.7.18
-│   │   └── memchr v2.5.0
-│   ├── memchr v2.5.0
-│   └── regex-syntax v0.6.26
-└── runnel v0.3.10
-    [build-dependencies]
-    └── rustc_version v0.4.0 (*)
+│   └── libc v0.2.175
+├── flood-tide v0.2.11
+├── memx-cdy v0.1.13
+│   ├── libc v0.2.175
+│   └── memx v0.1.32
+│       └── cpufeatures v0.2.17
+├── regex v1.11.1
+│   ├── aho-corasick v1.1.3
+│   │   └── memchr v2.7.5
+│   ├── memchr v2.7.5
+│   ├── regex-automata v0.4.9
+│   │   ├── aho-corasick v1.1.3 (*)
+│   │   ├── memchr v2.7.5
+│   │   └── regex-syntax v0.8.5
+│   └── regex-syntax v0.8.5
+└── runnel v0.3.19
 [build-dependencies]
-├── rust-version-info-file v0.1.5
-└── rustc_version v0.4.0 (*)
+├── rust-version-info-file v0.1.10
+└── rustc_version v0.4.1
+    └── semver v1.0.26
 [dev-dependencies]
-├── exec-target v0.2.6
-└── indoc v1.0.6 (proc-macro)
+├── exec-target v0.2.9
+└── indoc v1.0.9 (proc-macro)
 ```
 */
 use std::fs::OpenOptions;
@@ -132,6 +133,8 @@ fn tree_version_info(cargo_toml_file: &str) -> String {
     let cmd = "cargo";
     let out = std::process::Command::new(cmd)
         .arg("tree")
+        .arg("--color")
+        .arg("never")
         .arg("--manifest-path")
         .arg(cargo_toml_file)
         .output()
