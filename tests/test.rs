@@ -50,7 +50,8 @@ aki-gsub v0\.1\.34
 ├── memx-cdy v\d+\.\d+\.\d+
 │   ├── libc v\d+\.\d+\.\d+
 │   └── memx v\d+\.\d+\.\d+
-│       └── cpufeatures v\d+\.\d+\.\d+
+│       └── cpufeatures v\d+\.\d+\.\d+(
+│           └── libc v\d+\.\d+\.\d+)?
 ├── regex v\d+\.\d+\.\d+
 │   ├── aho-corasick v\d+\.\d+\.\d+
 │   │   └── memchr v\d+\.\d+\.\d+
